@@ -1,0 +1,6 @@
+{
+  "name": "Platform Steady",
+  "description": "An industrial, beginner-to-advanced educational platform for learning operating systems and software platforms, starting with Android.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
