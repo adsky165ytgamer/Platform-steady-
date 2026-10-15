@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "userProfile": {
+      "title": "UserProfile",
+      "description": "User profile with synchronized learning progress and display name",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user ID"
+        },
+        "username": {
+          "type": "string",
+          "description": "User custom handle or username"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User full or display name"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "User profile avatar picture URL"
+        },
+        "completedLessons": {
+          "type": "array",
+          "description": "IDs of lessons marked as complete"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp when the user profile was initialized"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp when the user profile was last updated"
+        }
+      },
+      "required": ["id", "email"]
+    },
+    "lessonProgress": {
+      "title": "LessonProgress",
+      "description": "Progress record for an individual lesson under user subcollection",
+      "type": "object",
+      "properties": {
+        "lessonId": {
+          "type": "string",
+          "description": "Unique lesson identifier"
+        },
+        "completed": {
+          "type": "string",
+          "description": "Boolean or status indicating completion"
+        },
+        "completedAt": {
+          "type": "string",
+          "description": "ISO timestamp when completed"
+        },
+        "synced": {
+          "type": "string",
+          "description": "Sync state flag"
+        }
+      },
+      "required": ["lessonId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/userProfile"
+      },
+      "description": "User document containing account info and completed lesson progress"
+    },
+    "/users/{userId}/progress/{lessonId}": {
+      "schema": {
+        "$ref": "#/entities/lessonProgress"
+      },
+      "description": "User progress subcollection storing individual lesson completion"
+    }
+  }
+}

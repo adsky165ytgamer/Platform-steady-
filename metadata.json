@@ -1,6 +1,6 @@
 {
   "name": "Platform Steady",
-  "description": "An industrial, beginner-to-advanced educational platform for learning operating systems and software platforms, starting with Android.",
+  "description": "An industrial universal engineering workspace with a Dual-Engine controller: In-Browser Local Stack (IndexedDB) and External Remote Gateway.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
